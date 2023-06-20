@@ -51,6 +51,12 @@ Apache Hadoop nos ofrece 3 cosas:
 - Un software (YARN) que permite coordinar todos nodos (maquinas de mierda) de un cluster
 - Un software para implementar operaciones MapReduce
 - Un sistema de archivos: HDFS, que permite guardar archivos GIGANTES distribuidos en múltiples HDD de múltiples computadoras
+        Las funciones para trabajar con ese sistema de archivos se basan.. (usan internamente) los comando por defecto que encontramos en un sistema POSIX (variante de UNIX)
+        mkdir
+        rm
+        cd
+        cat 
+       
 
   En un USB de 16 GBs vacio, puedo guardar un archivo de 5 Gbs? Depende del sistema de archivos del USB?
   FAT -> El tamaño máximo de archivo son 2 Gbs
