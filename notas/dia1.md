@@ -141,16 +141,16 @@ que van entrando, van saliendo
 que tardan distinto entre si.
 
 ---
+  
+  -----------red--------------------------------------------
+  |                                                     |
+  MI PC                             --->                Cluster de máquinas que tienen Spark
+                                                        Maestro ---> Nodos Trabajadores (decenas)
+  Aqui tengo el programa              datos
+  Y desde aquí lo ejecuto.            código de las operaciones que hay que hacer con los datos.
+  funciones... que transformen y operen sobre los datos
 
------------red--------------------------------------------
-|                                                     |
-MI PC                             --->                Cluster de máquinas que tienen Spark
-Maestro ---> Nodos Trabajadores (decenas)
-Aqui tengo el programa              datos
-Y desde aquí lo ejecuto.            código de las operaciones que hay que hacer con los datos.
-funciones... que transformen y operen sobre los datos
-
-java --jar
+  java --jar
 
 Aqui levanto una JVM
 
@@ -211,12 +211,12 @@ Al aplicar un modelo de programación MAP REDUCE, usaremos:
 
 - Operaciones MAP
 
-STREAM(RDD)         map(triple)                             STREAM(RDD)
-1               --->             --->     = triple(1) =         3
-2               --->             --->     = triple(2) =         6
-3               --->             --->     = triple(3)           9
-5               --->             --->     = funcion mapeo(5)
-9               --->             --->     = funcion mapeo(9)
+  STREAM(RDD)         map(triple)                             STREAM(RDD)
+  1               --->             --->     = triple(1) =         3
+  2               --->             --->     = triple(2) =         6
+  3               --->             --->     = triple(3)           9
+  5               --->             --->     = funcion mapeo(5)
+  9               --->             --->     = funcion mapeo(9)
 
 Esa de ahí arriba es la operación de MAP más basíca: filter, flatMap
 En general, llamaremos función de tipo "MAP", no sólo a la función MAP, sino a cualquier función que dado un Stream devuelva otro Stream
@@ -231,4 +231,38 @@ CONJUNTO DE DATOS
 .map( x1 )           // ME DA OTRO STREAM
 .map( x2 )           // ME DA OTRO STREAM
 .map( x3 )           // ME DA OTRO STREAM
-.reduce()            // YA NO ME DA STREAM... y corta 
+.max()            // YA NO ME DA STREAM... y corta
+
+
+
+40  \
+12  /  40   \
+                40   \
+11 \  11    /                 40
+11 /
+
+12 \             12  /
+10 /
+
+
+FlatMap
+
+
+StreamA                map ( .split(" "))      StreamB
+"Linea1 del texto"                             ["Linea1", "del", "texto"]
+"Linea2 del texto"                             ["Linea2", "del", "texto"]
+
+                      flatmap( .split(" "))
+                                               "Linea1"
+                                               "del"
+                                               "texto"
+                                               "Linea2"
+                                               "del"
+                                               "texto"
+
+
+(5,5,5,5,5)
+
+5 -> (0,1,2,3,4)
+
+(0,1,2,3,4,0,1,2,3,4,0,1,2,3,4,0,1,2,3,4,0,1,2,3,4)

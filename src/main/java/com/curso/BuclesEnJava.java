@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.function.Function;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 public class BuclesEnJava {
 
@@ -113,6 +112,13 @@ public class BuclesEnJava {
                 .map( numero -> numero + 3 )
                 .filter( numero -> numero % 2 == 1 ) // Los impares
                 .forEach( System.out::println );
+
+
+        texto= "Linea 1 del texto\nLinea 2 del texto";
+        texto.lines()   // En este stream tengo? 2 cosas
+                .flatMap( linea -> Arrays.stream(linea.split(" ")) ) // En este stream cuantas cosas tengo?
+                .forEach(System.out::println);
+
     }
 
     public static boolean acabaEn2(String texto){
