@@ -51,4 +51,13 @@ Además teneis un proxy que corta comunicaciones a sitios indebidos
                                                             ^^^^^^
 
 
+List(JAVA) -> Stream (JAVA)
+    miLista.stream()
 
+Stream (JAVA) -> Lista(JAVA)        Funcion de reduccion
+    miStream.collect( Collectors.toList() );       
+                                .toSet()
+                                .Map()
+
+List(JAVA) -> RDD(Spark)
+    conexion.parallelize(miLista)
