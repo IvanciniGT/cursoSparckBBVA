@@ -112,5 +112,10 @@ Pasos:
 
 - Cortar en un determinado Número de interés    REDUCE !!!!
 
-- 
+---
 
+"#goodvibes" , 1 \
+"#goodvibes" , 1 / 2  \
+"#goodvibes" , 1 \ 2  / 4   
+"#goodvibes" , 1 / 
+"#lovesummer", 1 
