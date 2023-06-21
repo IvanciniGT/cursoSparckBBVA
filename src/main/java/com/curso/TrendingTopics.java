@@ -2,6 +2,7 @@ package com.curso;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
 import java.util.Arrays;
@@ -19,6 +20,8 @@ public class TrendingTopics {
                 "En la playa con mis amigos!!! (#goodVibes)" ,
                 "Politicos de mierda#goodvibes#summerLove"
         );
+        List<String> hashtagsInvalidos = List.of("caca", "culo", "pedo", "pis");
+
 
         // Abrir una sesión (conexión) con el maestro de un cluster de Apache Spark
         final SparkConf configuracion = new SparkConf().setAppName("CalcularPI").setMaster("local");
@@ -27,10 +30,14 @@ public class TrendingTopics {
 
         //final JavaRDD<Integer> datosPartida =
         conexion.parallelize(tweets)                                             // RDD<String>
+                .repartition(100)
                 .map( tweet -> tweet.replaceAll("#", " #") )    // RDD<String> Añadir espacios en blanco antes de los #
                 .flatMap( tweet -> Arrays.asList( tweet.split("[ .,_+(){}!?¿'\"<>/@|&-]") ).iterator() ) // RDD<String> Extraer todos los términos
                 .filter( termino -> termino.startsWith("#") ) // RDD<String> Me quedo solo con los que empiezan por cuadradito
                 .map( hashtag -> hashtag.toLowerCase() ) // RDD<String> Normalizar los hashtags
+                .filter( hashtag -> {
+                    return ! hashtagsInvalidos.contains(hashtag.substring(1));
+                } )
                 .mapToPair( hashtag -> new Tuple2<>(hashtag, 1) ) // PairRDD<Tuple2<String, Integer>>    Añadirle a cada hashtag un 1
                 .reduceByKey(Integer::sum) // PairRDD<Tuple2<String, Integer>>  Cuento las ocurrencias de cada hashtag
                             // (numeroOcurrencias, otroNumeroOcurrencias) -> numeroOcurrencias + otroNumeroOcurrencias)
@@ -43,13 +50,9 @@ public class TrendingTopics {
                 //.forEach( System.out::println );
                 //.forEach( parejita -> System.out.println(parejita) );
 
-
-
         // Cierro conexión con el cluster de Spark
         conexion.close();
 
     }
-
-
 
 }

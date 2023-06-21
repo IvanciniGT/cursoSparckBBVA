@@ -119,3 +119,76 @@ Pasos:
 "#goodvibes" , 1 \ 2  / 4   
 "#goodvibes" , 1 / 
 "#lovesummer", 1 
+
+
+"En la playa con mis amigos"            .split
+
+En, la, playa, con, mis, amigos
+
+En
+la
+playa
+con
+mis
+amigos
+
+
+----
+
+# BroadCast
+
+Variable que podemos distribuir a los nodos y que se quedan con ella, de forma que no la tenga que enviar de continuo
+
+## Singletons
+
+Una clase de la que solo generamos una instancia
+
+## Spark Streaming
+
+Los procesos que teníamos funcionaban en modo Batch.
+Un trabajo por lotes, que lanzo y se ejecuta y acaba
+
+Lo que vamos a querer es que el programa de Spark no acabe nunca jamás en la vida!
+Al programa le configuraré una ventana de tiempo: 1 minuto
+En ese minuto (segundo), irá recibiendo tweets... al cabo del minuto, manda su procesamiento... 
+mientras sigue acumulando una nueva partida de tweets.
+
+A ese programa le llegan tweets... y produce un listado de hashtags cuantificados --> 
+Ese listado lo guardaré en una BBDD
+Lo mandaré a otro proceso que irá calculando trending topics con otra periodicidad
+
+
+    ---0..-.-.---5-...--.-CATAPLOT !---------------------------->   Tiempo
+                 v
+                Se lanza la ejecución de los trabajos
+                    Esto se pone en marcha en paralelo
+
+// Qué pasa si en un momento dado, el programa se cae! Hay en error... Me quedé sin memoria... lo que sea!
+Estaría perdiendo información
+    Al trabajar en modo streaming, le damos a Spark un directorio, 
+    donde va a ir guardando el estado en el que se encuentra en cada momento el programa
+
+Si en un momento dado el programa se cae.... intentara recuperarse de nuevo, cuando el programa sea reiniciado
+
+StreamingContext
+- Periodicidad
+- Trabajos que ejecutará cada 5 seg
+
+En los procesos en streaming tenemos el concepto de DStream... cuidado no confundir con el Stream de Java
+
+Stream Java: Colección de datos con métodos preparados para programación funcional 
+  ||
+RDD Spark: Es el quivalente... solo que los RDD se ejecutan DISTRIBIDOS EN NODOS
+
+DStream Spark = Coleccion de RDDs
+
+
+
+---
+
+En paralelo, se iba gestando la libreria SQL de Spark
+Y en ella se mete el conceto de SparkSession
+
+Spark... a pelo... es muy complejo de manejar para el tratamiento de datos más o menos complejos.
+La libreria SQL nos permite trabajar con conjuntos de datos mas complejos Datasets
+Y se monta un API para poder operar con los Dataset como si fuera SQL
