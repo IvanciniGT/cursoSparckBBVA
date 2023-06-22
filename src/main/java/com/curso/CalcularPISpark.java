@@ -26,7 +26,6 @@ public class CalcularPISpark {
         final SparkConf configuracion = new SparkConf().setAppName("CalcularPI").setMaster("local");
         // Usar la palabra "local" como master, levanta un cluster de spark en nuestro pc, para poder hacer pruebas y jugar
         final JavaSparkContext conexion = new JavaSparkContext(configuracion);
-
         //final JavaRDD<Integer> datosPartida =
         double estimacionDePI = conexion.parallelize(trabajadores) //, NUMERO_TRABAJADORES/2)   // Tengo un RDD con (0,1,2,3,4,5,6,7,8,9)
                 .map(trabajador -> dardosPorTrabajador)           // Tengo un RDD con (2000,2000,2000,200,2000)
