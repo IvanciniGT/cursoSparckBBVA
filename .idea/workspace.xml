@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4374174-75b2-4813-ad76-eb0a2f59aea4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/usuarios.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notas/dia4.md" beforeDir="false" afterPath="$PROJECT_DIR$/notas/dia4.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/IntroSparkSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/IntroSparkSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/usuarios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/CalcularPISpark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/CalcularPISpark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/TrendingTopicsStreaming.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/TrendingTopicsStreaming.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +55,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/streaming" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/curso" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="com.curso" />
@@ -178,6 +178,7 @@
       <workItem from="1687168477777" duration="7411000" />
       <workItem from="1687244705729" duration="16459000" />
       <workItem from="1687328684647" duration="15315000" />
+      <workItem from="1687433492032" duration="576000" />
     </task>
     <servers />
   </component>

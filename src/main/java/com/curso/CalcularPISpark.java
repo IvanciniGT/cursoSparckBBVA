@@ -23,7 +23,7 @@ public class CalcularPISpark {
 
 
         // Abrir una sesión (conexión) con el maestro de un cluster de Apache Spark
-        final SparkConf configuracion = new SparkConf().setAppName("CalcularPI").setMaster("local");
+        final SparkConf configuracion = new SparkConf().setAppName("CalcularPI");//.setMaster("local");
         // Usar la palabra "local" como master, levanta un cluster de spark en nuestro pc, para poder hacer pruebas y jugar
         final JavaSparkContext conexion = new JavaSparkContext(configuracion);
         //final JavaRDD<Integer> datosPartida =

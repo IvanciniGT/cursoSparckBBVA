@@ -95,3 +95,34 @@ Cuando el lenguaje me da la capacidad de poder definir mis propios tipos de dato
     Integer         numero                      valor absoluto
     Long
     Date            mes, dia, año               dia de la semana cae
+
+
+---
+
+
+# Ejecución dentro de un cluster real con spark-submit:
+
+bin\spark-class org.apache.spark.deploy.master.Master
+
+bin\spark-class org.apache.spark.deploy.worker.Worker spark://172.31.24.132:7077
+
+bin\spark-submit --master spark://172.31.24.132:7077 --class com.curso.CalcularPISpark ../cursoSpark-1.0-SNAPSHOT.jar
+
+bin\spark-submit --master spark://172.31.24.132:7077 --class com.curso.TrendingTopicsStreaming ../cursoSpark-1.0-SNAPSHOT.jar
+
+nc -l -p 5555
+
+#goodVibes
+De veraneo #GoodVibes
+#caca de verano
+hola amigos
+#goodVibes
+De veraneo #GoodVibes
+#caca de verano
+hola amigos
+#goodVibes
+De veraneo #GoodVibes
+#caca de verano
+hola amigos
+#viva#felipe
+#viva#federico

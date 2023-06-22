@@ -29,7 +29,7 @@ public class TrendingTopicsStreaming {
     }
     public static JavaStreamingContext crearStreamingContextSiNoExiste(){
         // Abrir una sesión (conexión) con el maestro de un cluster de Apache Spark
-        final SparkConf configuracion = new SparkConf().setAppName("ProcesarTweetsStreaming").setMaster("local");
+        final SparkConf configuracion = new SparkConf().setAppName("ProcesarTweetsStreaming");//.setMaster("local");
 
         // Usar la palabra "local" como master, levanta un cluster de spark en nuestro pc, para poder hacer pruebas y jugar
         final JavaStreamingContext conexion = new JavaStreamingContext(configuracion, Durations.seconds(5));
