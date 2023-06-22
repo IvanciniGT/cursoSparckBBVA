@@ -1,4 +1,4 @@
-{"nombre": "Ivan", "apellidos": "Osuna", "edad": 44}
-{"nombre": "Menchu", "apellidos": "Lopez", "edad": 33}
-{"nombre": "Lucas", "apellidos": "Osuna", "edad": 22}
-{"nombre": "Ivan", "apellidos": "Lopez", "edad": 55}
+{"nombre": "Ivan", "apellidos": "Osuna", "edad": 44, "email":  "ivan@gmail.com", "dni":  "12345678W"}
+{"nombre": "Menchu", "apellidos": "Lopez", "edad": 33, "email":  "menchu@gmail.com", "dni":  "12345678A"}
+{"nombre": "Lucas", "apellidos": "Osuna", "edad": 22, "email":  "lucas@gmail.com", "dni":  "12345678B"}
+{"nombre": "Ivan", "apellidos": "Lopez", "edad": 55, "email":  "ivan.com", "dni":  "12345678M"}

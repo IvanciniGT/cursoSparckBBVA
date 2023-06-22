@@ -40,7 +40,6 @@ public class CalcularPISpark {
         // Cierro conexión con el cluster de Spark
         conexion.close();
 
-
         // Necesitaré crear un RDD, el equivalente en Spark a un Stream
         estimacionDePI = estimacionDePI / NUMERO_TRABAJADORES;
         System.out.println("Mi estimación de PI vale: " + estimacionDePI);

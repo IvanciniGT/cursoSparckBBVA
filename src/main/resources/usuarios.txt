@@ -1,0 +1,4 @@
+Ivan,Osuna,44,ivan@gmail.com,12345678W
+Menchu,Lopez,33,menchu@gmail.com,12345678A
+Lucas,Osuna,15,lucas@gmail.com,12345678B
+Ivan,Lopez,55,ivan.com,B12345678
