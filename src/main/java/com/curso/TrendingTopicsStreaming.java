@@ -42,7 +42,7 @@ public class TrendingTopicsStreaming {
                 .map( hashtag -> hashtag.toLowerCase() ) // RDD<String> Normalizar los hashtags
                 .foreachRDD(    /// Fucnion de reduccion cuando opero con DSTreams
                         rdd -> {
-                            List<String> hashtagsInvalidos = ListaDeHashtagsProhibidos.getInstance(rdd.context()).getValue();
+                            List<String> hashtagsInvalidos = ListaDeHashtagsProhibidos.getInstance(JavaSparkContext.fromSparkContext(rdd.context())).getValue();
                             rdd.filter( hashtag -> {
                                 return ! hashtagsInvalidos.contains(hashtag.substring(1));
                             } )

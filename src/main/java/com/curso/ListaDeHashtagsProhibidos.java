@@ -10,7 +10,7 @@ class ListaDeHashtagsProhibidos {
 
     private static volatile Broadcast<List<String>> listaDeHashtagsAEliminar = null;
 
-    public static Broadcast<List<String>> getInstance(SparkContext conexion){
+    public static Broadcast<List<String>> getInstance(JavaSparkContext conexion){
         if(listaDeHashtagsAEliminar == null) {
             synchronized (ListaDeHashtagsProhibidos.class) {
                 if (listaDeHashtagsAEliminar == null) {
